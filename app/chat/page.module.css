@@ -735,3 +735,296 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+.chatShell {
+  width: min(860px, calc(100% - 40px));
+  margin-top: 20px;
+}
+
+.chatHeader {
+  min-height: 82px;
+  border-radius: 10px;
+}
+
+.profileText h1 {
+  font-size: 21px;
+}
+
+.profileText p {
+  font-size: 11px;
+}
+
+.disclosure p {
+  font-size: 11px;
+}
+
+.conversation {
+  display: flex;
+  min-height: clamp(430px, calc(100svh - 260px), 700px);
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.conversationTopline {
+  min-height: 50px;
+}
+
+.conversationTopline > div {
+  font-size: 12px;
+}
+
+.localBadge {
+  font-size: 10px;
+}
+
+.messageList {
+  min-height: 0;
+  max-height: none;
+  flex: 1;
+  padding: 28px clamp(18px, 5vw, 56px);
+}
+
+.emptyChat h2 {
+  font-size: 22px;
+}
+
+.emptyChat > p {
+  font-size: 13px;
+}
+
+.promptList {
+  width: min(430px, 100%);
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.promptButton {
+  min-height: 46px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+
+.messages {
+  gap: 19px;
+}
+
+.messageAvatar,
+.userAvatar {
+  width: 31px;
+  height: 31px;
+}
+
+.messageBubble {
+  max-width: min(78%, 600px);
+  padding: 12px 15px 9px;
+  border-radius: 14px 14px 14px 4px;
+}
+
+.userBubble {
+  border-radius: 14px 14px 4px 14px;
+}
+
+.messageAuthor {
+  font-size: 9px;
+}
+
+.messageBubble p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.messageBubble time {
+  font-size: 9px;
+}
+
+.typingBubble {
+  min-width: 104px;
+}
+
+.typingDots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 17px;
+}
+
+.typingDots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8fa7b7;
+  animation: typingPulse 1.1s ease-in-out infinite;
+}
+
+.typingDots i:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.typingDots i:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.messageRow {
+  animation: messageIn 220ms ease-out both;
+}
+
+.composer {
+  margin: 0 19px;
+  padding: 13px 0 8px;
+}
+
+.composer textarea {
+  min-height: 48px;
+  padding: 13px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.composerHint {
+  margin: 0 19px;
+  padding-bottom: 11px;
+  font-size: 9px;
+}
+
+.sendButton {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+}
+
+.privacyFooter {
+  margin-top: 13px;
+  font-size: 11px;
+}
+
+.clearButton,
+.promptButton,
+.sendButton {
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease, transform 150ms ease, opacity 150ms ease;
+}
+
+.promptButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.backLink:focus-visible,
+.clearButton:focus-visible,
+.promptButton:focus-visible,
+.sendButton:focus-visible,
+.composer textarea:focus-visible {
+  outline: 3px solid rgba(92, 155, 202, 0.3);
+  outline-offset: 2px;
+}
+
+@keyframes messageIn {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typingPulse {
+  0%, 60%, 100% { opacity: 0.42; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (max-width: 700px) {
+  .chatShell {
+    width: calc(100% - 28px);
+    margin-top: 13px;
+  }
+
+  .chatHeader {
+    min-height: 76px;
+  }
+
+  .chatStatus {
+    font-size: 10px;
+  }
+
+  .conversation {
+    min-height: max(430px, calc(100svh - 270px));
+  }
+
+  .messageList {
+    padding: 20px 12px;
+  }
+
+  .messageBubble {
+    max-width: 84%;
+    padding: 10px 12px 8px;
+  }
+
+  .messageBubble p {
+    font-size: 13px;
+  }
+
+  .composer {
+    margin: 0 10px;
+  }
+
+  .composer textarea {
+    min-height: 46px;
+    font-size: 14px;
+  }
+
+  .composerHint {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .topbar {
+    padding: 9px 12px;
+  }
+
+  .brand img {
+    width: 138px;
+  }
+
+  .backLink {
+    font-size: 9px;
+  }
+
+  .chatShell {
+    width: calc(100% - 20px);
+  }
+
+  .chatHeader {
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .profileAvatar {
+    width: 43px;
+    height: 43px;
+  }
+
+  .profileText h1 {
+    font-size: 17px;
+  }
+
+  .chatHeaderActions {
+    padding-top: 2px;
+  }
+
+  .clearButton {
+    min-height: 32px;
+    font-size: 9px;
+  }
+
+  .disclosure p {
+    font-size: 10px;
+  }
+
+  .conversationTopline {
+    padding: 0 10px;
+  }
+
+  .localBadge {
+    font-size: 8px;
+  }
+
+  .promptButton {
+    font-size: 11px;
+  }
+}
